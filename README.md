@@ -1,70 +1,17 @@
-# Getting Started with Create React App
+## Inspiration
+It's been a massive struggle finding good new music recently, most songs are found on TikTok and are very overplayed and repetitive. That's what sparked my idea of Visualised, a place that could help you find your music. 
+## What it does
+Visualised provides users with a easy way to view their Spotify data, specifically tracks, artists, and genres. It also provides an intuitive way to pick new music you like. You can listen to snippets of songs curated just for you and add it to your Spotify app with just one click.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+https://visualised.tech/ (due to Spotify limitations, only invited members will be able to use it)
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## How we built it
+I utilized the Spotify API alongside React and D3.js to build Visualised. The Spotify API was used to retrieve data and push changes to your Spotify app. React was used to create the user interface and provide a front-end for the user. D3.js was used to create a map of your most played genres.
+## Challenges we ran into
+This was my first real project using React, I have used other frameworks but it wasn't very intensive. Learning all the ins and outs of React was very difficult and often resulted in hours of troubleshooting. Also, I am a solo hacker so time was a very big challenge as well, I had to rush a lot and stayed up for a long time too.
+## Accomplishments that we're proud of
+I am very proud of the entire project, especially how much I learned. I used a lot of libraries that I have never used before, specially React. It was fun and rewarding finishing the project and learning the new library.
+## What we learned
+I learned how to use React to create front-end user interfaces and I learned how to use D3.js to manage collision and create simulated charts.
+## What's next for Visualised
+There is a lot of options for expandability on this project, however, I think creating a way to share the visualizations among users would be very cool. Also, adding more data that can be viewed
