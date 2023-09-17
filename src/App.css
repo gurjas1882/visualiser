@@ -135,20 +135,59 @@ iframe {
 	color: white;
 }
 
+.gridHeader h5 {
+	position: absolute;
+	top: 5vh;
+	left: 0;
+	text-align: center;
+	z-index: 10;
+	width: 100%;
+	color: white;
+	font-weight: 400;
+}
+
 .grid {
 	position: absolute;
 	top: 90vh;
-	left: calc(50% - 30vw);
+	left: calc(50% - 31vw);
 	display: grid;
 	grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
 	background-color: rgba(255, 255, 255, 0.2);
 	width: 50vw;
-	padding: 5vw;
+	padding: 6vw;
+	border-radius: 10px 10px 0px 0px;
 }
 
 .grid-item {
 	background-color: none;
 	padding: 2px;
+}
+
+.logo {
+	position: absolute;
+	top: 2vh;
+	width: 20vw;
+}
+
+.logoText {
+	position: absolute;
+	top: 10vh;
+	font-size: 15px;
+	color: white;
+	font-weight: 400;
+}
+
+.logoText button {
+	color: inherit;
+	background: none;
+	border: none;
+	padding: 0;
+	margin: 0;
+	font-size: inherit;
+	font-weight: inherit;
+	font-family: inherit;
+	cursor: pointer;
+	text-decoration: underline;
 }
 
 a {

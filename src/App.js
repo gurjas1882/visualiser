@@ -1,4 +1,4 @@
-import logo from "./logo.svg";
+import logo from "./assets/logo-no-background.png";
 import "./App.css";
 import {useEffect, useRef, useState} from "react";
 import axios from "axios";
@@ -14,7 +14,7 @@ function App() {
 	const endpoint = "https://accounts.spotify.com/authorize";
 	const client_id = "e2eb80deed934e49905fa157112568d1";
 	const redirect = "http://localhost:3000";
-	const scope = "user-top-read";
+	const scope = "user-top-read user-library-modify";
 
 	const [token, setToken] = useState("");
 	const [selectedOptions, setSelectedOption] = useState("");
@@ -22,6 +22,7 @@ function App() {
 	const [trackData, setTrackData] = useState([]);
 	const [genreCount, setGenreCount] = useState({});
 	const [weeklyData, setWeeklyData] = useState([]);
+	const [page, setPageData] = useState("");
 
 	useEffect(() => {
 		const hash = window.location.hash;
@@ -43,6 +44,11 @@ function App() {
 			getWeekly(access_token);
 		}
 	}, []);
+
+	const logout = () => {
+		setToken("");
+		window.localStorage.removeItem("access_token");
+	};
 
 	const getArtists = async (token) => {
 		const {data} = await axios.get(`https://api.spotify.com/v1/me/top/artists?limit=50&offset=0`, {
@@ -73,7 +79,12 @@ function App() {
 				<div className="artistsHeader">
 					<h1>
 						TOP{" "}
-						<button className="trackButton" onClick={renderTracks}>
+						<button
+							className="trackButton"
+							onMouseDown={() => {
+								setPageData();
+							}}
+						>
 							ARTISTS
 						</button>
 					</h1>
@@ -91,7 +102,7 @@ function App() {
 									<h6>{i + 1}.</h6>
 								</td>
 								<td>
-									<img src={a.images[0].url} />
+									<img className="image" src={a.images[0].url} />
 								</td>
 								<td>
 									<h6>{a.name}</h6>
@@ -123,7 +134,12 @@ function App() {
 				<div className="artistsHeader">
 					<h1>
 						TOP{" "}
-						<button className="trackButton" onClick={renderArtists}>
+						<button
+							className="trackButton"
+							onMouseDown={() => {
+								setPageData("track");
+							}}
+						>
 							TRACKS
 						</button>
 					</h1>
@@ -171,11 +187,14 @@ function App() {
 
 	return (
 		<div className="App">
+			<img src={logo} className="logo"></img>
+			<h1 className="logoText">Spotify Visualized. {token ? <button onClick={logout}>Sign Out.</button> : ""}</h1>
 			{!token ? (
 				<a href={`${endpoint}?client_id=${client_id}&redirect_uri=${redirect}&response_type=token&scope=${scope}`}>log in</a>
 			) : (
 				<div className="App-container">
-					<header className="App-header">{renderTracks()}</header>
+					<header className="App-header">{!page ? renderTracks() : renderArtists()}</header>
+
 					<div className="Chart-container">
 						<div className="Chart-header">
 							<h1>TOP GENRES</h1>
@@ -184,7 +203,7 @@ function App() {
 					</div>
 				</div>
 			)}
-			<div className="songSelection">{AudioPreview(weeklyData)}</div>
+			{token ? <div className="songSelection">{AudioPreview(weeklyData, token)}</div> : ""}
 		</div>
 	);
 }
