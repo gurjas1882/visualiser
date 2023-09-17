@@ -161,6 +161,7 @@ iframe {
 .grid-item {
 	background-color: none;
 	padding: 2px;
+	cursor: pointer;
 }
 
 .logo {
@@ -188,6 +189,14 @@ iframe {
 	font-family: inherit;
 	cursor: pointer;
 	text-decoration: underline;
+}
+
+.footer {
+	position: absolute;
+	bottom: -43vh;
+	font-size: 20px;
+	color: white;
+	font-weight: 400;
 }
 
 a {

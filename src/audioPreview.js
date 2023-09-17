@@ -43,11 +43,15 @@ const AudioPreview = (trackData, token) => {
 						onMouseDown={() => {
 							console.log("wih");
 							console.log(token);
-							axios.put(`https://api.spotify.com/v1/me/tracks?ids=${a.track.id}`, {
-								headers: {
-									Authorization: `Bearer ${token}`,
-								},
-							});
+							axios.put(
+								`https://api.spotify.com/v1/me/tracks?ids=${a.track.id}`,
+								{},
+								{
+									headers: {
+										Authorization: `Bearer ${token}`,
+									},
+								}
+							);
 						}}
 					>
 						<img src={a.track.album.images[0].url} style={{width: "100%"}} alt={`Track ${i}`} />

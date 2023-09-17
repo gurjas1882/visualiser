@@ -13,7 +13,7 @@ import AudioPreview from "./audioPreview";
 function App() {
 	const endpoint = "https://accounts.spotify.com/authorize";
 	const client_id = "e2eb80deed934e49905fa157112568d1";
-	const redirect = "http://localhost:3000";
+	const redirect = "https://visualised.tech";
 	const scope = "user-top-read user-library-modify";
 
 	const [token, setToken] = useState("");
@@ -189,6 +189,7 @@ function App() {
 		<div className="App">
 			<img src={logo} className="logo"></img>
 			<h1 className="logoText">Spotify Visualized. {token ? <button onClick={logout}>Sign Out.</button> : ""}</h1>
+			<h1 className="footer">made with passion by jaskaran</h1>
 			{!token ? (
 				<a href={`${endpoint}?client_id=${client_id}&redirect_uri=${redirect}&response_type=token&scope=${scope}`}>log in</a>
 			) : (
